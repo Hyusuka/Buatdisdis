@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Buatmu</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .heart {
+            font-size: 3em;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.2s;
+        }
+        .heart:hover {
+            transform: scale(1.2);
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .heart {
+                font-size: 2.5em;
+                margin: 0 5px;
+            }
+            #message {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            .heart {
+                font-size: 2em;
+                margin: 0 3px;
+            }
+            #message {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentuh LOVEnya!</h1>
+        <div>
+            <span class="heart" onclick="showMessage()">❤️</span>
+            <span class="heart" onclick="showMessage()">❤️</span>
+            <span class="heart" onclick="showMessage()">❤️</span>
+            <span class="heart" onclick="showMessage()">❤️</span>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "Semoga kamu selalu sehat di sana!",
+                "Selalu berusahalah untuk makan tepat waktu, terutama jangan pernah telat dalam beribadah.",
+                "Jika kamu merasa hari ini tidak menyenangkan, yakinlah bahwa semuanya akan segera berlalu ...",
+                "Berharap tidak ada yang bisa merenggut senyumanmu, dan berharap kamu selalu menemukan cara untuk mewujudkan impian-impian yang pernah kamu bagikan serta berharap prosesnya akan sebanding dengan hasil akhir."
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').innerText = randomMessage;
+        }
+    </script>
+</body>
+</html>
